@@ -60,26 +60,26 @@ static Checkpoints::MapCheckpoints mapCheckpoints =
     (204464,uint256("9d2f9808c10408899cfff44f6a3adc44690912dd0dcb3b530c45cd2ad9a31f0e")) //about when spork 16 activated
     (369647,uint256("82ba21a1afcb59ebdede612516d9c3bfed42e2e18baba172b971fd714d32bdf6"))
     (600000,uint256("c6c87c5f70578ebb270012492e0dd222d6532a864853beefc894840aad73f021"))    
-    (700000,uint256("5a857ad8a1f2922273ea8691491332f805af19e9c2e3b8eba57d473e93f67fb7"))    
     (800000,uint256("ef48831e1547b45d90ef5360c606f49e35504f38abe383614486753cb9451515"))    
-    (900000,uint256("23614a26ae6b3e457eec08dde3ad04ff15b0ca4e0ec3e8acf0c4c153beb997eb"))    
     (1000000,uint256("3a121397bca5552e637c80f981db080c54e1bae2def44fc06071cb4867df7124"))    
-    (1356300,uint256("b6a142e71ced86ca8ce28991cf2a1a84944f68baaf786d8cd17b24cd27a69cb0"))
-    (1402300,uint256("b7681e795c973a8ee5c87444f1a22eedd9ffb8b034f835019fab4fb2db3a6e00"))
     (1402500,uint256("d9544578aae78d2ae2c68599641f66e90829156bb9157c73e807e570f927d6a0"))
-    (1527500,uint256("962401aa296b4a5834bde6f7ce2240bf02358c50eef3121501b6075bb8fe2ecc"))
     (1529400,uint256("2e2f9fc719f478a532177f57c56345502539aeb37ba45b8147fbdf53f15f628f"))
-    (1540850,uint256("ad53c70beb0dde7fe7c291cbdc5382c29d011d946edf14adf8274db765213c48"))
     (1594800,uint256("35d628c9471ff3d2b98d327a87b69669b219e5c473c0ccd54d6db84198b38819"))
     (1797000,uint256("3222dfdda3b2c842eaff173e3a632964d56c3f5a957d0b444af2df07dd06754d"))
     (2000016,uint256("Fed89c61b9c7e19593c259344eb5d8a3121fd7f516d2cca31499a28f68af73b7"))
-    (2050000,uint256("6f89ed36393384b07325b96e54b59abdd8a1803b98b1ccaae14cc80c8912395e"))
-    (2078350,uint256("55599f4c11d8e59a8eb94047789123da1eb64d2a4bcce09f499d4e2ad01e3b5a"));
+    (2100000,uint256("6de337c80ebc7188068bbc75c5b56a41c9985bbf7ed3d6d9bf5944cf4b07df89"))
+    (2200000,uint256("c2cf136b10ed51ec789dfe6deb295897860c3ebe6249a7f104d431aacbe6e024"))
+    (2272870,uint256("c33f86f3df7aaa4b3dbde7aa208868c749be4c93005be3acc20797cbf0c30c7b"))
+    (2273000,uint256("3fbd64cbde35ec010d7b27912d4e80f355f53fc59abcbbbe048bafd48950ef2d"))
+    (2300000,uint256("e362137475764e6b21ce5371a989215a5f935d796bd4df24254fb55881aa42eb"))
+    (2351323,uint256("6bdef58f67eba723a9e4cac88866934119de74cf04b88cf726175b75ae9cc928"))
+    (2354800,uint256("c0aac8e944fd0ce6ae51bda6df11d08ba8fd3705a7d6eca1da61f1b90070ba59"))
+    (2356600,uint256("d001912873bd1077dae83bdb023dfa96e2e2444910a2bf8e7a585d7d21b3bcd6"));
     
 static const Checkpoints::CCheckpointData data = {
     &mapCheckpoints,
-    1615666837, // * UNIX timestamp of last checkpoint block
-    7626589,     // * total number of transactions between genesis and last checkpoint
+    1627926765, // * UNIX timestamp of last checkpoint block
+    8524881,     // * total number of transactions between genesis and last checkpoint
                 //   (the tx=... number in the SetBestChain debug.log lines)
     2000        // * estimated number of transactions per day after checkpoint
 };
@@ -201,7 +201,7 @@ public:
         nTargetTimespan_V2 = 2 * nTimeSlotLength * 60;  // 30 minutes
         nMaturity = 8;
         nStakeMinAge = 60 * 60;                         // 1 hour
-        nStakeMinDepth = 600;
+        nStakeMinDepth = 80;
         nFutureTimeDriftPoW = 7200;
         nFutureTimeDriftPoS = 180;
         nMasternodeCountDrift = 20;
@@ -384,12 +384,11 @@ public:
         nMaturity = 15;
         nTimeSlotLength = 15;                       // 15 seconds
         nStakeMinAge = 60 * 60;                         // 1 hour
-        nStakeMinDepth = 600;
+        nStakeMinDepth = 80;
         nFutureTimeDriftPoW = 7200;
         nFutureTimeDriftPoS = 180;
 
         nFundamentalnodeCountDrift = 4;
-        nStakeMinDepth = 100;
         nMasternodeCountDrift = 4;
         nModifierUpdateBlock = 51197; //approx Mon, 17 Apr 2017 04:00:00 GMT
         nMaxMoneyOut = 43199500 * COIN;

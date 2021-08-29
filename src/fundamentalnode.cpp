@@ -490,6 +490,7 @@ bool CFundamentalnodeBroadcast::CheckAndUpdate(int& nDos)
     if(lastPing == CFundamentalnodePing() || !lastPing.CheckAndUpdate(nDos, false, true))
         return false;
 
+
     if (protocolVersion < fundamentalnodePayments.GetMinFundamentalnodePaymentsProto()) {
         LogPrint("fundamentalnode","mnb - ignoring outdated Fundamentalnode %s protocol version %d\n", vin.prevout.hash.ToString(), protocolVersion);
         return false;
@@ -792,9 +793,9 @@ bool CFundamentalnodePing::CheckAndUpdate(int& nDos, bool fRequireEnabled, bool 
         nDos = 1;
         return false;
     }
-
     if(fCheckSigTimeOnly) {
     	CFundamentalnode* pmn = mnodeman.Find(vin);
+        if(pmn) LogPrintf("CFundamentalnodePing::VerifySignature - %s\n", pmn->pubKeyFundamentalnode.GetHash().ToString());
     	if(pmn) return VerifySignature(pmn->pubKeyFundamentalnode, nDos);
     	return true;
     }

@@ -30,13 +30,13 @@ private:
 
     /// Ping Fundamentalnode
     bool SendFundamentalnodePing(std::string& errorMessage);
-
+    bool SendFNPing(std::string& errorMessage, CTxIn input, CPubKey pubKeyFundamentalnode, CKey keyFundamentalnode);
     /// Create Fundamentalnode broadcast, needs to be relayed manually after that
-    bool CreateBroadcast(CTxIn vin, CService service, CKey key, CPubKey pubKey, CKey keyFundamentalnode, CPubKey pubKeyFundamentalnode, std::string& errorMessage, CFundamentalnodeBroadcast &mnb);
+    bool CreateBroadcast(CTxIn input, CService service, CKey key, CPubKey pubKey, CKey keyFundamentalnode, CPubKey pubKeyFundamentalnode, std::string& errorMessage, CFundamentalnodeBroadcast &mnb);
 
     /// Get 10000 VITAE input that can be used for the Fundamentalnode
-    bool GetFundamentalNodeVin(CTxIn& vin, CPubKey& pubkey, CKey& secretKey, std::string strTxHash, std::string strOutputIndex);
-    bool GetVinFromOutput(COutput out, CTxIn& vin, CPubKey& pubkey, CKey& secretKey);
+    bool GetFundamentalNodeVin(CTxIn& input, CPubKey& pubkey, CKey& secretKey, std::string strTxHash, std::string strOutputIndex);
+    bool GetVinFromOutput(COutput out, CTxIn& input, CPubKey& pubkey, CKey& secretKey);
 
 public:
     // Initialized by init.cpp
@@ -63,7 +63,7 @@ public:
     bool CreateBroadcast(std::string strService, std::string strKey, std::string strTxHash, std::string strOutputIndex, std::string& errorMessage, CFundamentalnodeBroadcast &mnb, bool fOffline = false);
 
     /// Get 10000 VITAE input that can be used for the Fundamentalnode
-    bool GetFundamentalNodeVin(CTxIn& vin, CPubKey& pubkey, CKey& secretKey);
+    bool GetFundamentalNodeVin(CTxIn& input, CPubKey& pubkey, CKey& secretKey);
     vector<COutput> SelectCoinsFundamentalnode();
 
     /// Enable cold wallet mode (run a Fundamentalnode with no funds)
